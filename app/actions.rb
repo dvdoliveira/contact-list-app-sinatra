@@ -4,6 +4,7 @@ get '/' do
 end
 
 get '/contacts' do
+  content_type 'json'
   @contacts = Contact.all.to_json
 end
 
@@ -12,7 +13,12 @@ get '/contact/:id' do
 end
 
 post '/contact' do
-  @contact = Contact.new(firstname: params[:first_name], lastname: params[:last_name], email: params[:email], phone: params[:phone])
+  @contact = Contact.new(
+    firstname: params[:first_name], 
+    lastname: params[:last_name], 
+    email: params[:email], 
+    phone: params[:phone]
+  )
   if @contact.save
     @contact.to_json
   else
