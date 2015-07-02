@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $('#btn-list-contact').on('click', function() {
+  // Show all contacts on page load
+  var load_contacts = function() {
     $('.contact-list').show();
     $.ajax({                                            
       url: '/api/contacts',                                    
@@ -16,6 +17,8 @@ $(document).ready(function() {
         alert("Error loading contacts.");
       }
     });
-  })
+  };
+
+  load_contacts();
 
 });

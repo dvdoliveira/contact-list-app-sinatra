@@ -12,14 +12,15 @@
           </button>
           <a class="navbar-brand" href="#">Contact List</a>
       </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="btn-lg" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-plus-sign'></span></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
     </div> <!-- Container -->
   </nav> <!-- / Navbar -->
   <!--Content -->
   <div class="container-fluid">
-    <div class="row">
-      <button type="submit" class="btn-default" id="btn-add-contact">Add Contact</button>
-      <button type="submit" class="btn-default" id="btn-list-contact">List Contacts</button>    
-    </div>
     <div class="row contact-list">
       <table class="table table-striped">
         <tr>
@@ -31,3 +32,42 @@
     </div>
   </div> <!-- / Content -->
 </div> <!-- / Main Container -->
+
+<!-- Modal Form -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Contact</h4>
+      </div>
+      <div class="modal-body well" style="margin: 20px;">
+        <form id="add-contact-form">
+          <div class="form-group">
+            <label for="">First Name:</label>
+            <input type="text" class="form-control" name="first_name" required>
+          </div>
+          <div class="form-group">
+            <label for="">Last Name:</label>
+            <input type="text" class="form-control" name="last_name" required>
+          </div>
+          <div class="form-group">
+            <label for="">Email:</label>
+            <input type="text" class="form-control" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="">Phone Number:</label>
+            <input type="text" class="form-control" name="phone" required>
+          </div>
+          <br>
+          <div class="form-group btn-login">
+            <button type="submit" class="btn btn-submit" id="contact-button">Add Contact</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
