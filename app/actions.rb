@@ -3,16 +3,16 @@ get '/' do
   erb :index
 end
 
-get '/contacts' do
+get '/api/contacts' do
   content_type 'json'
   @contacts = Contact.all.to_json
 end
 
-get '/contact/:id' do
+get '/api/contact/:id' do
   @contact = Contact.find(params[:id]).to_json
 end
 
-post '/contact' do
+post '/api/contact' do
   @contact = Contact.new(
     firstname: params[:first_name], 
     lastname: params[:last_name], 
@@ -26,7 +26,7 @@ post '/contact' do
   end
 end
 
-delete '/contact' do
+delete '/api/contact' do
   @contact = Contact.find(params[:id])
   @contact.destroy
 end
