@@ -43,7 +43,13 @@ $(document).ready(function() {
       data: $("#add-contact-form").serialize(),
       success: function(data){
         data=JSON.parse(data);
-        $(".table-striped").append("<tr>" + "<td>" + data["firstname"] + " " + data["lastname"] + "</td>" + "<td>" + data["email"] + "</td>" + "<td>" + data["phone"] + "</td>" + "</tr>");
+        $(".table-striped").append("<tr>" + 
+          "<td>" + data["firstname"] + " " + data["lastname"] + "</td>" + 
+          "<td>" + data["email"] + "</td>" + 
+          "<td>" + data["phone"] + "</td>" + 
+          "<td class='table-icon'>" + "<a class='edit-contact' href='api/contact/" + data["id"] + "'><span class='glyphicon glyphicon-pencil'></span> </a>" + "</td>" +
+          "<td class='table-icon'>" + "<a class='delete-contact' href='api/contact/" + data["id"] + "'><span class='glyphicon glyphicon-remove'></span> </a>" + "</td>" + 
+          "</tr>");
         $("#myModal").modal("hide");
         resetForm();
       }
