@@ -26,7 +26,11 @@ post '/api/contact' do
   end
 end
 
-delete '/api/contact' do
+delete '/api/contact/:id' do
   @contact = Contact.find(params[:id])
-  @contact.destroy
+  if @contact.destroy
+    {:contact => @contact, :status => "success"}.to_json
+  else
+    {:contact => @contact, :status => "failure"}.to_json
+  end
 end

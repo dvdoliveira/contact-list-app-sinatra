@@ -2,3 +2,15 @@
   padding-top: 20px;
   display: none;
 }
+
+.table-icon {
+  text-align: center;
+}
+
+.glyphicon-plus {
+  color: green;
+}
+
+.glyphicon-remove {
+  color: red;
+}
